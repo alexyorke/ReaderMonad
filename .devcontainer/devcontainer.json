@@ -1,0 +1,17 @@
+{
+  "name": "ReaderMonad (Dev Container)",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "target": "dev"
+  },
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "dotnet.defaultSolution": "ReaderMonad.sln"
+      }
+    }
+  }
+}
+
+

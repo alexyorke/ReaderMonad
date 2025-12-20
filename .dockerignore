@@ -1,0 +1,17 @@
+**/.git
+**/.vs
+**/.vscode
+**/bin
+**/obj
+**/TestResults
+**/*.user
+**/*.suo
+**/*.cache
+**/*.pdb
+**/*.log
+**/*.tmp
+**/*.nupkg
+**/*.snupkg
+**/node_modules
+
+

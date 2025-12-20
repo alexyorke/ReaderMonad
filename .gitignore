@@ -1,0 +1,101 @@
+## .NET / C#
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]ny [Cc]pu/
+[Aa]rm/
+[Aa]rm64/
+[Ll]ogs/
+
+## Visual Studio
+.vs/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.rsuser
+*.VC.db
+*.VC.VC.opendb
+
+## Visual Studio Code
+.vscode/
+
+## Rider / JetBrains
+.idea/
+*.sln.iml
+
+## ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+## NuGet
+*.nupkg
+# packages/            # (old style) uncomment if you use packages.config
+# **/packages/*        # (old style) uncomment if you use packages.config
+*.snupkg
+
+## DotCover
+*.dotCover
+
+## Test results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+## Coverage tools
+coverage/
+coverage*/ 
+*.lcov
+
+## Publish / artifacts
+publish/
+artifacts/
+
+## ASP.NET
+wwwroot/lib/
+
+## EF / local databases
+*.mdf
+*.ldf
+*.sqlite
+*.db
+*.db-shm
+*.db-wal
+
+## OS junk
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+## Secrets (common patterns)
+**/appsettings.*.json
+!**/appsettings.json
+!**/appsettings.Development.json
+secrets.json
+*.pfx
+*.snk
+
+## Logs
+*.log
+
+## Paket
+.paket/
+paket-files/
+
+## BenchmarkDotNet
+BenchmarkDotNet.Artifacts/
+
+## Local tools / caches
+.nuget/
+# If you use dotnet tool restore and want to keep tool manifests, keep:
+!.config/dotnet-tools.json
