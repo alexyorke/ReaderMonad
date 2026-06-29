@@ -5,7 +5,7 @@
 ## You can also build a small runtime image via: docker build --target runtime -t reader-monad-runtime .
 
 # -------- Dev container (default) --------
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS dev
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS dev
 WORKDIR /workspace
 
 ENV DOTNET_CLI_TELEMETRY_OPTOUT=1 \
