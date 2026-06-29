@@ -38,8 +38,9 @@ RUN dotnet test ./ReaderMonad.sln -c Release --no-restore
 RUN dotnet publish ./ReaderMonad/ReaderMonad.csproj -c Release --no-restore -o /app/publish
 
 # -------- Runtime image (optional) --------
-FROM mcr.microsoft.com/dotnet/runtime:8.0 AS runtime
+FROM mcr.microsoft.com/dotnet/runtime:10.0 AS runtime
 WORKDIR /app
+ENV DOTNET_ROLL_FORWARD=Major
 COPY --from=build /app/publish ./
 ENTRYPOINT ["dotnet", "ReaderMonad.dll"]
 
@@ -47,5 +48,4 @@ ENTRYPOINT ["dotnet", "ReaderMonad.dll"]
 # Docker builds the last stage by default; make that the dev container.
 FROM dev AS final
 CMD ["sleep", "infinity"]
-
 
