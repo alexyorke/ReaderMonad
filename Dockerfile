@@ -34,7 +34,7 @@ CMD ["sleep", "infinity"]
 
 # -------- CI-ish build (tests + publish) --------
 FROM dev AS build
-RUN dotnet test ./ReaderMonad.sln -c Release --no-restore
+RUN DOTNET_ROLL_FORWARD=Major dotnet test ./ReaderMonad.sln -c Release --no-restore
 RUN dotnet publish ./ReaderMonad/ReaderMonad.csproj -c Release --no-restore -o /app/publish
 
 # -------- Runtime image (optional) --------
