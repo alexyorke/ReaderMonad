@@ -5,7 +5,7 @@
 ## You can also build a small runtime image via: docker build --target runtime -t reader-monad-runtime .
 
 # -------- Dev container (default) --------
-FROM mcr.microsoft.com/dotnet/sdk:10.0 AS dev
+FROM mcr.microsoft.com/dotnet/sdk:11.0 AS dev
 WORKDIR /workspace
 
 ENV DOTNET_CLI_TELEMETRY_OPTOUT=1 \
@@ -34,11 +34,11 @@ CMD ["sleep", "infinity"]
 
 # -------- CI-ish build (tests + publish) --------
 FROM dev AS build
-RUN dotnet test ./ReaderMonad.sln -c Release --no-restore
+RUN DOTNET_ROLL_FORWARD=Major dotnet test ./ReaderMonad.sln -c Release --no-restore
 RUN dotnet publish ./ReaderMonad/ReaderMonad.csproj -c Release --no-restore -o /app/publish
 
 # -------- Runtime image (optional) --------
-FROM mcr.microsoft.com/dotnet/runtime:10.0 AS runtime
+FROM mcr.microsoft.com/dotnet/runtime:11.0 AS runtime
 WORKDIR /app
 ENV DOTNET_ROLL_FORWARD=Major
 COPY --from=build /app/publish ./
